@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import TabBar from './components/TabBar';
 import CalendarStrip from './components/CalendarStrip';
 import ShiftCard from './components/ShiftCard';

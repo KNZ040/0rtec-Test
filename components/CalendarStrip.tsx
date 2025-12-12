@@ -23,12 +23,8 @@ const CalendarStrip: React.FC<CalendarStripProps> = ({
   // Auto scroll to center/selected item on mount/update
   useEffect(() => {
     if (scrollRef.current) {
-      // Find the selected element index
       const selectedIndex = days.findIndex(d => d.isoDate === selectedDate);
       if (selectedIndex !== -1) {
-         // Roughly center: 50px item width. 
-         // Container width / 2 - (Index * 50 + 25)
-         // A simple scrollIntoView is easiest
          const container = scrollRef.current;
          const child = container.children[selectedIndex] as HTMLElement;
          if (child) {
@@ -58,16 +54,15 @@ const CalendarStrip: React.FC<CalendarStripProps> = ({
         </button>
         
         <div className="relative group cursor-pointer">
-           {/* Hidden date input covering the text for native picker feeling */}
            <input 
               type="date" 
               value={selectedDate}
               onChange={(e) => onSelectDate(e.target.value)}
               className="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-10"
            />
-           <h2 className="text-gray-700 font-bold uppercase text-sm tracking-wide group-hover:text-[#007AC3] transition-colors flex items-center gap-1">
-            {new Date(selectedDate).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
-             <svg className="w-4 h-4 text-gray-400 group-hover:text-[#007AC3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+           <h2 className="text-gray-800 font-bold uppercase text-xs tracking-wide transition-colors flex items-center gap-1">
+            {new Date(selectedDate).toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' })}
+             <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
              </svg>
           </h2>
@@ -96,9 +91,11 @@ const CalendarStrip: React.FC<CalendarStripProps> = ({
               className="flex flex-col items-center justify-start min-w-[52px] cursor-pointer flex-shrink-0"
             >
               <div className={`
-                flex flex-col items-center justify-center w-[50px] h-[58px] border border-gray-200 rounded-sm
+                flex flex-col items-center justify-center w-[50px] h-[58px] border rounded-sm
                 transition-colors duration-200
-                ${isSelected ? 'border-[#007AC3] border-2 bg-[#E6F2F9] shadow-sm z-10' : 'bg-white hover:border-gray-300'}
+                ${isSelected 
+                  ? 'border-[#007AC3] border-2 bg-white shadow-sm z-10' 
+                  : 'border-gray-200 bg-white hover:border-gray-300'}
               `}>
                 <span className={`text-[10px] uppercase mb-0.5 font-bold ${isSelected ? 'text-[#007AC3]' : 'text-gray-400'}`}>
                     {day.dayName}
@@ -111,7 +108,7 @@ const CalendarStrip: React.FC<CalendarStripProps> = ({
               {/* Shift Indicator Dot/Bar */}
               <div className="h-3 flex items-center justify-center w-full mt-1">
                  {shiftExists && (
-                   <div className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-[#007AC3]' : 'bg-gray-300'}`}></div>
+                   <div className={`w-3 h-1.5 rounded-sm ${isSelected ? 'bg-[#007AC3]' : 'bg-[#007AC3]'}`}></div>
                  )}
               </div>
             </div>
