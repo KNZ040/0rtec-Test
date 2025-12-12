@@ -1,0 +1,5 @@
+{
+  "name": "ORTEC Self Service Replica",
+  "description": "A replica of the ORTEC Employee Self Service app with roster management capabilities.",
+  "requestFramePermissions": []
+}
