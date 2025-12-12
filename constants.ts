@@ -36,24 +36,22 @@ export const SHIFT_DEFINITIONS: Record<ShiftType, ShiftConfig> = {
 };
 
 export const INITIAL_SHIFTS: Shift[] = [
-  // December 2024 Roster
+  // December 2025 Rooster
+  // Woensdag 10 december 2025 is de datum van de screenshot.
   
-  // "Deze week avonddiensten di/wo/do" (Assuming week of Dec 16)
-  { id: '1', date: '2024-12-17', type: 'AVOND', location: 'BW Sommelsdijk' }, // Di
-  { id: '2', date: '2024-12-18', type: 'AVOND', location: 'BW Sommelsdijk' }, // Wo
-  { id: '3', date: '2024-12-19', type: 'AVOND', location: 'BW Sommelsdijk' }, // Do
+  // Week van 8 december 2025
+  { id: '1', date: '2025-12-09', type: 'AVOND', location: 'BW Sommelsdijk' }, // Di
+  { id: '2', date: '2025-12-10', type: 'AVOND', location: 'BW Sommelsdijk' }, // Wo (Screenshot datum)
+  { id: '3', date: '2025-12-11', type: 'AVOND', location: 'BW Sommelsdijk' }, // Do
+  { id: '4', date: '2025-12-12', type: 'AVOND', location: 'BW Sommelsdijk' }, // Vr
 
-  // "Vrijdag avonddienst" (Based on user description override)
-  { id: '4', date: '2024-12-20', type: 'AVOND', location: 'BW Sommelsdijk' }, // Vr
+  // Weekend
+  { id: '5', date: '2025-12-13', type: 'OCHTEND', location: 'BW Sommelsdijk' }, // Za
+  { id: '6', date: '2025-12-14', type: 'OCHTEND', location: 'BW Sommelsdijk' }, // Zo
 
-  // "Za/zo ochtenddienst"
-  { id: '5', date: '2024-12-21', type: 'OCHTEND', location: 'BW Sommelsdijk' }, // Za
-  { id: '6', date: '2024-12-22', type: 'OCHTEND', location: 'BW Sommelsdijk' }, // Zo
-
-  // Next week: "woensdag/donderdag/vrijdag nachtdienst"
-  { id: '7', date: '2024-12-25', type: 'NACHT', location: 'BW Sommelsdijk' }, // Wo (Eerste Kerstdag)
-  { id: '8', date: '2024-12-26', type: 'NACHT', location: 'BW Sommelsdijk' }, // Do (Tweede Kerstdag)
-  { id: '9', date: '2024-12-27', type: 'NACHT', location: 'BW Sommelsdijk' }, // Vr
+  // Kerst 2025 (Donderdag/Vrijdag)
+  { id: '7', date: '2025-12-25', type: 'NACHT', location: 'BW Sommelsdijk' }, // Do (1e Kerstdag)
+  { id: '8', date: '2025-12-26', type: 'NACHT', location: 'BW Sommelsdijk' }, // Vr (2e Kerstdag)
 ];
 
 export const COLORS = {

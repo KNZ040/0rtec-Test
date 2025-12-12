@@ -9,8 +9,8 @@ import { INITIAL_SHIFTS, SHIFT_DEFINITIONS } from './constants';
 
 function App() {
   const [activeTab, setActiveTab] = useState('ROOSTER');
-  // Start on Wednesday, December 18, 2024
-  const [selectedDate, setSelectedDate] = useState<string>('2024-12-18');
+  // Start on Wednesday, December 10, 2025 to match the screenshot provided
+  const [selectedDate, setSelectedDate] = useState<string>('2025-12-10');
   const [shifts, setShifts] = useState<Shift[]>(INITIAL_SHIFTS);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
